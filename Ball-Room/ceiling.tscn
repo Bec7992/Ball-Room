@@ -8,14 +8,15 @@ material = SubResource( 1 )
 
 [sub_resource type="BoxShape" id=3]
 
-[node name="Spatial" type="Spatial"]
+[node name="Ceiling" type="Spatial"]
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 2, 0, 0, 0, 0.1, 0, 0, 0, 2, 0, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = null
 
-[node name="Area" type="Area" parent="MeshInstance"]
+[node name="Area" type="Area" parent="."]
+transform = Transform( 2, 0, 0, 0, 0.1, 0, 0, 0, 2, 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/Area"]
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
 shape = SubResource( 3 )

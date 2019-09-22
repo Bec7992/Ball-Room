@@ -17,8 +17,7 @@ script = ExtResource( 1 )
 mesh = SubResource( 2 )
 material/0 = null
 
-[node name="Area" type="Area" parent="MeshInstance"]
+[node name="Area" type="Area" parent="."]
 
-[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/Area"]
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
 shape = SubResource( 3 )
-[connection signal="area_entered" from="MeshInstance/Area" to="." method="_on_Area_area_entered"]

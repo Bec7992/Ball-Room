@@ -25,6 +25,8 @@ public:
 
     void _init(); // our initializer called by Godot
 
+    void _ready();
+
     void _process();
 
     void _on_area_entered(Area* other);
