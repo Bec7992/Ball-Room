@@ -19,7 +19,7 @@ void WallNormal::_init() {
 }
 
 void WallNormal::_process() {
-    Godot::print("wall process");
+    //Godot::print("wall process");
 }
 
 

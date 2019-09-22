@@ -46,6 +46,7 @@ void BallRoom::_on_area_entered(Area* other) {
 	//Godot::print(name);
     if (name == ("Ball1") || name == ("Ball2") || name == ("Ball3")) {
         //Godot::print("Hit a ball");
+        // other->get_translation() might be the wrong coord (local vs global?)
         Vector3 diff = get_translation() - other->get_translation();
         Vector3 diff_normal = diff.normalized();
         velocity = velocity.bounce(diff_normal);
@@ -53,6 +54,6 @@ void BallRoom::_on_area_entered(Area* other) {
     else if (name == ("Ceiling") || name == ("Floor") || name == ("Wall1") || name == ("Wall2") || name == ("Wall3") || name == ("Wall4")) {
         //dir = dir.dot(other->get_parent()->normal);
         //velocity = dir * velocity.length();
-        velocity = velocity.bounce(other->get_parent()->normal);
+        velocity = velocity.bounce(other->get_parent()->normal());
     }
 }

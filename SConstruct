@@ -13,7 +13,7 @@ opts.Add(EnumVariable('p', "Compilation target, alias for 'platform'", '', ['', 
 opts.Add(BoolVariable('use_llvm', "Use the LLVM / Clang compiler", 'no'))
 opts.Add(PathVariable('target_path', 'The path where the lib is installed.', 'Ball-Room/bin/'))
 opts.Add(PathVariable('target_name', 'The library name.', 'libballroom', PathVariable.PathAccept))
-opts.Add(PathVariable('target_name2', 'The library name.', 'libwallnormal', PathVariable.PathAccept))
+#opts.Add(PathVariable('target_name2', 'The library name.', 'libwallnormal', PathVariable.PathAccept))
 
 # Local dependency paths, adapt them to your setup
 godot_headers_path = "godot-cpp/godot_headers/"
@@ -101,7 +101,7 @@ env.Append(CPPPATH=['src/'])
 sources = Glob('src/*.cpp')
 
 library = env.SharedLibrary(target=env['target_path'] + env['target_name'] , source=sources)
-library += env.SharedLibrary(target=env['target_path'] + env['target_name2'] , source=sources)
+#library += env.SharedLibrary(target=env['target_path'] + env['target_name2'] , source=sources)
 
 Default(library)
 
